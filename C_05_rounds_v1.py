@@ -4,8 +4,8 @@ import random
 # generates an integer between 0 and 6
 # to simulate a roll of a die
 def roll_die():
-    result = random.randint(1, 6)
-    return result
+    roll_result = random.randint(1, 6)
+    return roll_result
 
 
 # rolls two dice and returns total and whether we
@@ -40,14 +40,8 @@ user_points = user_first[0]
 double_points = user_first[1]
 
 # Tell the user if they are eligible for double points
-if double_points == "no":
-    double_feedback = ""
-else:
-    double_feedback = "If you win this round, you gain double points!"
-
-# output initial move results
-# print(f"You rolled a total of {user_points}.  {double_feedback}")
-# print()
+if double_points == "yes":
+    print("If you win this round, you gain double points!")
 
 # Get initial dice rolls for computer
 computer_first = two_rolls("Computer")
@@ -118,5 +112,9 @@ if user_points < computer_points:
 
 # currently does not include double points!
 else:
+    # Double user points if they are eligible
+    if double_points == "yes":
+        user_points *= 2
+
     print(f"👍👍👍 Yay!  You won the round and {user_points} points have "
           f"been added to your score 👍👍👍")
