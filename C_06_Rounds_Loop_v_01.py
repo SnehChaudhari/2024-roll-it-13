@@ -1,10 +1,10 @@
 
-# Checks that users enter an integer
+# Checks that users enter a number
 # that is more than 13
 def int_check(question):
 
     while True:
-        error = "Please enter an integer that is 13 or more."
+        error = "Please enter a number that is 13 or more."
 
         try:
             response = int(input(question))
